@@ -1,24 +1,27 @@
+// Classe principal
 public class Main {
     public static void main(String[] args) {
-        Banco banco = new Banco();
+        // Criação de um objeto do tipo Banco com o nome "Caixa"
+        Banco banco = new Banco("Caixa");
 
-        ContaCorrente conta1 = new ContaCorrente(12345, "001");
-        Cliente cliente1 = new Cliente("João", "123.456.789-00", conta1);
+        // Criação de uma conta com número 12345 e agência "001"
+        Conta conta1 = new Conta(12345, "001");
+
+        // Criação de um cliente com nome "Pablo Moreria Santos", associado ao banco e à conta criados anteriormente
+        Cliente cliente1 = new Cliente("Pablo Moreria Santos", banco, conta1);
+
+        // Adicionando o cliente criado ao banco
         banco.adicionarCliente(cliente1);
+t -m
+        // Creditando R$ 1000.0 na conta do cliente
+        cliente1.getConta().creditar(1000.0);
 
-        ContaCorrente conta2 = new ContaCorrente(54321, "002");
-        Cliente cliente2 = new Cliente("Maria", "987.654.321-00", conta2);
-        banco.adicionarCliente(cliente2);
-
-        cliente1.getContaCorrente().creditar(1000.0);
-        cliente2.getContaCorrente().debitar(500.0);
-
+        // Iterando sobre a lista de clientes do banco e exibindo informações de cada um
         for (Cliente cliente : banco.getClientes()) {
-            System.out.println("Cliente: " + cliente.getNome());
-            System.out.println("CPF: " + cliente.getCpf());
-            System.out.println("Número da Conta: " + cliente.getContaCorrente().getNumero());
-            System.out.println("Agência: " + cliente.getContaCorrente().getAgencia());
-            System.out.println("Saldo: " + cliente.getContaCorrente().getSaldo());
+            System.out.println("Cliente: " + cliente1.getNome());
+            System.out.println("Banco: " + cliente1.getBanco().getNome());
+            System.out.println("Agência: " + cliente1.getConta().getAgencia());
+            System.out.println("Saldo: " + cliente1.getConta().getSaldo());
             System.out.println();
         }
     }
