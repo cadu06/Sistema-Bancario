@@ -5,10 +5,10 @@ public class Main {
         Banco banco = new Banco("Caixa");
 
         // Criação de uma conta com número 12345 e agência "001"
-        Conta conta1 = new Conta(12345, "001");
+        Conta conta1 = new Conta(12346, "001");
 
         // Criação de um cliente com nome "Pablo Moreria Santos", associado ao banco e à conta criados anteriormente
-        Cliente cliente1 = new Cliente("Pablo Moreria Santos", banco, conta1);
+        Cliente cliente1 = new Cliente("Carlos Eduardo de Sousa Lima", banco, conta1);
 
         // Adicionando o cliente criado ao banco
         banco.adicionarCliente(cliente1);
