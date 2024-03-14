@@ -12,7 +12,6 @@ public class Main {
 
         // Adicionando o cliente criado ao banco
         banco.adicionarCliente(cliente1);
-t -m
         // Creditando R$ 1000.0 na conta do cliente
         cliente1.getConta().creditar(1000.0);
 
